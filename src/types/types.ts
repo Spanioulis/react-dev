@@ -24,3 +24,11 @@ export interface Photo {
         }[];
     };
 }
+
+export interface MyImageProps {
+    alt?: string;
+    height?: number | string;
+    src: string;
+    width?: number | string;
+    placeholder: string;
+}

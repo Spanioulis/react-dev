@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Photo } from './types/types';
+import MyImage from './components/MyImage';
+import placeholder from './assets/img/placeholder_image.jpg';
 import './App.css';
 
 function App() {
@@ -18,14 +20,12 @@ function App() {
         <>
             <h1>NASA Photos</h1>
 
-            <section>
-                <div>
-                    {photos?.map((photo) => (
-                        <div className="photo" key={photo?.id}>
-                            <img src={photo?.img_src} />
-                        </div>
-                    ))}
-                </div>
+            <section className="s-grid-images">
+                {photos?.map((photo) => (
+                    <div className="photo" key={photo?.id}>
+                        <MyImage src={photo?.img_src} width={400} height={400} placeholder={placeholder} />
+                    </div>
+                ))}
             </section>
         </>
     );
